@@ -1,17 +1,23 @@
 :host {
   --mat-toolbar-standard-height: 100px;
-}
 
-.logo {
-  height: inherit;
-  padding: 10px;
-  box-sizing: border-box;
-
-  img {
-    height: 100%;
+  .toolbar-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
   }
-}
 
-.example-spacer {
-  flex: 1 1 auto;
+  .logo {
+    height: inherit;
+    padding: 10px;
+    box-sizing: border-box;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
 }

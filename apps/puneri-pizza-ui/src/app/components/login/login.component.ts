@@ -45,7 +45,7 @@ export class LoginComponent {
 
   submitOtp() {
     if(this.form2.getRawValue().otp === '123456') {
-      this._snackBar.open('Login Successfull');
+      this._snackBar.open('Login Successfull', undefined, { duration: 3000 });
       localStorage.setItem('isLoggedIn', `true`);
       this.authService.isLoggedIn$.next(true);
       localStorage.setItem('phoneNumber', this.form.getRawValue().phoneNumber);

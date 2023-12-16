@@ -2,9 +2,24 @@
   <span class="logo"><a [routerLink]="['/dashboard']"><img src="assets/logo.png" /></a></span>
   <span class="example-spacer"></span>
   @if(isLoggedIn) {
-  <button mat-button (click)="logout()">
-    <mat-icon>account_circle</mat-icon>
-    Logout
-  </button>
+  <div class="toolbar-actions">
+    @if(editPincode) {
+    <mat-form-field class="pincode-form-field" floatLabel="always" [hideRequiredMarker]="true">
+      <input type="tel" matInput placeholder="Pin Code" [maxlength]="6" [minlength]="6" [(ngModel)]="pincode">
+      <button mat-icon-button matSuffix color="primary" [disabled]="pincode.length !== 6" (click)="editPincode = false">
+        <mat-icon>done</mat-icon>
+      </button>
+    </mat-form-field>
+    } @else {
+    {{ pincode ? pincode : 'Finding Pincode' }}
+    <button mat-icon-button (click)="editPincodeHandler()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    }
+    <button mat-button (click)="logout()">
+      <mat-icon>account_circle</mat-icon>
+      Logout
+    </button>
+  </div>
   }
 </mat-toolbar>
