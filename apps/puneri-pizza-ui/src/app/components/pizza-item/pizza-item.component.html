@@ -1,0 +1,7 @@
+@if(item) {
+  <div class="pizza-item">
+    <img [src]="item.imageUrl" [alt]="item.name">
+    <h4 class="pizza-title">{{item.name}}</h4>
+    <p class="pizza-description">{{item.description}}</p>
+  </div>
+}

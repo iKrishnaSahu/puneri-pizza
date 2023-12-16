@@ -1,0 +1,39 @@
+.pizza-item {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  gap: 10px;
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 5px;
+
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+
+  img {
+    height: 200px;
+    width: 250px;
+    border-radius: 5px;
+  }
+
+  .pizza-title {
+    margin: 0;
+  }
+
+  .pizza-description {
+    margin: 0;
+    display: -webkit-box;
+    max-width: 250px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &:hover {
+    border-color: rgb(232, 232, 232);
+    box-shadow: rgba(28, 28, 28, 0.12) 0px 0.4rem 1.8rem;
+    transform: scale(1.1,1.1);
+  }
+}

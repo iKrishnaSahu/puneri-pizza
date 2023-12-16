@@ -1,1 +1,18 @@
-<p>Getting Pizza for you</p>
+<div class="dashboard-container">
+  <div>
+    @if(isLoading) {
+      @for(item of dummyArray; track item) {
+        <puneri-pizza-pizza-item-skeleton></puneri-pizza-pizza-item-skeleton>
+      }
+      } @else {
+      @if(pizzaList.length > 0) {
+        <!-- Show pizza list here -->
+        @for(item of pizzaList; track item) {
+          <puneri-pizza-pizza-item [item]="item"></puneri-pizza-pizza-item>
+        }
+      } @else {
+        <h3>No Pizza Found</h3>
+      }
+    }
+  </div>
+</div>

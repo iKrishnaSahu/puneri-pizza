@@ -1,0 +1,12 @@
+.dashboard-container {
+  display: flex;
+  padding: 50px 50px;
+  justify-content: center;
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+}

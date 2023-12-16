@@ -60,7 +60,8 @@
           "buildTarget": "puneri-pizza-ui:build:production"
         },
         "development": {
-          "buildTarget": "puneri-pizza-ui:build:development"
+          "buildTarget": "puneri-pizza-ui:build:development",
+          "proxyConfig": "apps/puneri-pizza-ui/proxy.config.json"
         }
       },
       "defaultConfiguration": "development"
