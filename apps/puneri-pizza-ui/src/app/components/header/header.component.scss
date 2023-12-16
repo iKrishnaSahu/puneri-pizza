@@ -1,0 +1,17 @@
+:host {
+  --mat-toolbar-standard-height: 100px;
+}
+
+.logo {
+  height: inherit;
+  padding: 10px;
+  box-sizing: border-box;
+
+  img {
+    height: 100%;
+  }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
