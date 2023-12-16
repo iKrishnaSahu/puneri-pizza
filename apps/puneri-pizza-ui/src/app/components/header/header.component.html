@@ -1,8 +1,10 @@
 <mat-toolbar color="primary">
   <span class="logo"><a [routerLink]="['/dashboard']"><img src="assets/logo.png" /></a></span>
   <span class="example-spacer"></span>
-  <button mat-button>
+  @if(isLoggedIn) {
+  <button mat-button (click)="logout()">
     <mat-icon>account_circle</mat-icon>
-    Login
+    Logout
   </button>
+  }
 </mat-toolbar>

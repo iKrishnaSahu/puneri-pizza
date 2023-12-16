@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-card {
+    padding: 50px 40px;
+
+    mat-card-content {
+      padding: 20px 0 0;
+
+      mat-form-field {
+        width: 100%;
+      }
+
+      .button {
+        float: right;
+      }
+    }
+  }
+}
