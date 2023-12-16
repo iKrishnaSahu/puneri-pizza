@@ -1,0 +1,86 @@
+{
+  "name": "puneri-pizza-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "puneri-pizza",
+  "sourceRoot": "apps/puneri-pizza-ui/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/puneri-pizza-ui",
+        "index": "apps/puneri-pizza-ui/src/index.html",
+        "browser": "apps/puneri-pizza-ui/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/puneri-pizza-ui/tsconfig.app.json",
+        "assets": [
+          "apps/puneri-pizza-ui/src/favicon.ico",
+          "apps/puneri-pizza-ui/src/assets"
+        ],
+        "styles": ["apps/puneri-pizza-ui/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "puneri-pizza-ui:build:production"
+        },
+        "development": {
+          "buildTarget": "puneri-pizza-ui:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "puneri-pizza-ui:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/puneri-pizza-ui/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "puneri-pizza-ui:build",
+        "staticFilePath": "dist/apps/puneri-pizza-ui/browser"
+      }
+    }
+  }
+}
