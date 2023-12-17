@@ -16,6 +16,9 @@
       <mat-icon>edit</mat-icon>
     </button>
     }
+    <button mat-button routerLink="cart">
+      Cart @if(cartLength > 0) { - ({{cartLength}}) }
+    </button>
     <button mat-button (click)="logout()">
       <mat-icon>account_circle</mat-icon>
       Logout

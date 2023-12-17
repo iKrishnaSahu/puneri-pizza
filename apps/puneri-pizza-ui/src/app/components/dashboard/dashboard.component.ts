@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PizzaItemSkeletonComponent } from '../pizza-item-skeleton/pizza-item-skeleton.component';
 import { PizzaService } from '../../services/pizza.service';
-import { Pizza } from '../../models/pizza';
+import { CartPizza, Pizza } from '../../models/pizza';
 import { PizzaItemComponent } from '../pizza-item/pizza-item.component';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'puneri-pizza-dashboard',
@@ -16,8 +17,11 @@ export class DashboardComponent implements OnInit {
   pizzaList: Pizza[] = [];
   isLoading = false;
   dummyArray = Array.from(Array(10).keys());
+  selectedPizza: Pizza[] = [];
 
-  constructor(private pizzaService: PizzaService) { }
+  constructor(
+    private pizzaService: PizzaService,
+    private cartService: CartService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -34,5 +38,23 @@ export class DashboardComponent implements OnInit {
           this.isLoading = false;
         })
     }, 2000);
+    this.cartService.cart$
+      .subscribe(pizza => {
+        this.selectedPizza = pizza;
+      })
+  }
+
+  addToCartHandler(event: CartPizza) {
+    // TODO: this should be done in backend
+    this.cartService.addToCart(event);
+  }
+
+  getCount(item: Pizza) {
+    return this.selectedPizza.filter(x => x.id === item.id).length;
+  }
+
+  removePizzaHandler(event: number) {
+    // TODO: this should be done in backend
+    this.cartService.removeFromCartById(event);
   }
 }

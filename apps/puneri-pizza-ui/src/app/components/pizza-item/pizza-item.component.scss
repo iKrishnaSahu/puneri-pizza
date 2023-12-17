@@ -7,16 +7,10 @@
   padding: 10px;
   border-radius: 5px;
 
-  -webkit-transition: all .4s ease-in-out;
-  -moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -ms-transition: all .4s ease-in-out;
-
-  img {
-    height: 200px;
-    width: 250px;
-    border-radius: 5px;
-  }
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
 
   .pizza-title {
     margin: 0;
@@ -29,11 +23,67 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    height: 57px;
   }
 
   &:hover {
     border-color: rgb(232, 232, 232);
     box-shadow: rgba(28, 28, 28, 0.12) 0px 0.4rem 1.8rem;
-    transform: scale(1.1,1.1);
+    // transform: scale(1.1, 1.1);
+  }
+
+  .pizza-image-container {
+    position: relative;
+    .veg-icon {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+
+    .pizza-image {
+      height: 200px;
+      width: 250px;
+      border-radius: 5px;
+    }
+
+    .price {
+      position: absolute;
+      color: white;
+      font-weight: bold;
+      bottom: 15px;
+      left: 10px;
+    }
+    
+    .customize-button {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+  }
+
+  .cusomization-1 {
+    display: flex;
+    gap: 10px;
+
+    .mat-mdc-form-field-type-mat-select {
+      --mdc-filled-text-field-container-color: white;
+
+      .mat-mdc-text-field-wrapper {
+        padding: 0 16px 0 5px;
+      }
+
+      .mat-mdc-form-field-subscript-wrapper {
+        display: none;
+      }
+    }
+  }
+
+  .actions {
+    .add-to-cart-button {
+      float: right;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

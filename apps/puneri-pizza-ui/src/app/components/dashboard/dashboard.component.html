@@ -8,7 +8,8 @@
       @if(pizzaList.length > 0) {
         <!-- Show pizza list here -->
         @for(item of pizzaList; track item) {
-          <puneri-pizza-pizza-item [item]="item"></puneri-pizza-pizza-item>
+          <puneri-pizza-pizza-item [item]="item" (addToCart)="addToCartHandler($event)"
+          [selectionCount]="getCount(item)" (removePizza)="removePizzaHandler($event)"></puneri-pizza-pizza-item>
         }
       } @else {
         <h3>No Pizza Found</h3>

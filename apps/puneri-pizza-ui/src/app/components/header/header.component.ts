@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AuthService } from '../../services/auth.service';
 import { ReplaySubject, takeUntil } from 'rxjs';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { CartService } from '../../services/cart.service';
 @Component({
   selector: 'puneri-pizza-header',
   standalone: true,
@@ -25,11 +26,13 @@ export class HeaderComponent implements OnDestroy {
   private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
   pincode: string = '411014';
   editPincode = false;
+  cartLength = 0;
 
   constructor(
     private authService: AuthService,
     private dialog: MatDialog,
-    private router: Router) {
+    private router: Router,
+    private cartService: CartService) {
     this.authService.isLoggedIn$
       .pipe(takeUntil(this.destroyed$))
       .subscribe((isLoggedIn) => {
@@ -43,6 +46,11 @@ export class HeaderComponent implements OnDestroy {
         //       });
         //   });
         // }
+      });
+    this.cartService.cart$
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe((cart) => {
+        this.cartLength = cart.length;
       });
   }
 

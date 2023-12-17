@@ -7,7 +7,6 @@ import { Pizza } from '../models/pizza';
   providedIn: 'root'
 })
 export class PizzaService {
-
   constructor(private httpClient: HttpClient) { }
 
   getPizza(): Promise<Pizza[]> {

@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start:server": "nx serve --project puneri-pizza-server",
-    "start:ui": "nx serve --project puneri-pizza-ui"
+    "start:ui": "nx serve --project puneri-pizza-ui",
+    "start": "concurrently \"npm:start:ui\" \"npm:start:server\""
   },
   "private": true,
   "dependencies": {
@@ -53,6 +54,7 @@
     "@types/node": "18.16.9",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
+    "concurrently": "^8.2.2",
     "cypress": "^13.0.0",
     "esbuild": "^0.19.2",
     "eslint": "~8.48.0",
