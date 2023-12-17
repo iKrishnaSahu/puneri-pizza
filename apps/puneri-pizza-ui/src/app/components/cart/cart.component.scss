@@ -1,0 +1,17 @@
+.cart-container {
+  display: flex;
+  padding: 50px 50px;
+  justify-content: center;
+
+  .cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .total {
+      button {
+        float: right;
+      }
+    }
+  }
+}

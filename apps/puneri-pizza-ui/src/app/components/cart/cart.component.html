@@ -1,0 +1,21 @@
+<div class="cart-container">
+  <div>
+    <h1>
+      Cart
+    </h1>
+    @if(cartItems.length > 0) {
+    <!-- Show pizza list here -->
+    <div class="cart-list">
+      @for(item of cartItems; track item) {
+      <puneri-pizza-cart-item [item]="item"></puneri-pizza-cart-item>
+      }
+      <div class="total">
+        <button mat-raised-button color="primary">Checkout (Total - {{total}})</button>
+      </div>
+    </div>
+
+    } @else {
+    <h3>You cart is empty. <a [routerLink]="['/dashboard']">Click here</a> to select pizza</h3>
+    }
+  </div>
+</div>

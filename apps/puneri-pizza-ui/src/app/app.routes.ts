@@ -10,6 +10,11 @@ export const appRoutes: Route[] = [
     canActivate: [authGuard]
   },
   {
+    path: 'cart',
+    loadComponent: () => import('./components/cart/cart.component').then(comp => comp.CartComponent),
+    canActivate: [authGuard]
+  },
+  {
     path: 'get-started',
     component: LoginComponent
   },

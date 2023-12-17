@@ -1,0 +1,14 @@
+@if(item) {
+<div class="cart-item">
+  <div class="image">
+    <img [src]="item.imageUrl" />
+  </div>
+  <div class="title">
+    <h3>{{item.name}}</h3>
+    <h4>{{item.description}}</h4>
+  </div>
+  <div class="action">
+    <span>₹ {{item.basePrice + this.item.selectedSize.price + this.item.selectedCrust.price}}</span>
+  </div>
+</div>
+}

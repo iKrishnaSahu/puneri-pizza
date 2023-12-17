@@ -35,6 +35,7 @@ export class PizzaItemComponent implements OnInit {
   addToCartHandler() {
     const cartPizza = {
       ...this.item,
+      // TODO: server should generate this id
       type: `${this.item.id}_${this.item.selectedCrust.type}_${this.item.selectedSize.type}`
     }
     this.addToCart.emit(cartPizza);

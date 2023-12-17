@@ -4,7 +4,7 @@
     <span class="price">₹ {{item.basePrice + this.item.selectedSize.price + this.item.selectedCrust.price}}</span>
     <img class="veg-icon" [src]="item.veg ? veg : nonVeg" [alt]="item.name">
     <img class="pizza-image" [src]="item.imageUrl" [alt]="item.name">
-    <button class="customize-button" mat-raised-button (click)="customize()">Customise</button>
+    <!-- <button class="customize-button" mat-raised-button (click)="customize()">Customise</button> -->
   </div>
   <h3 class="pizza-title">{{item.name}}</h3>
   <p class="pizza-description">{{item.description}}</p>
@@ -33,12 +33,12 @@
       <button mat-button (click)="addToCartHandler()" class="add-to-cart-button">Add to Cart</button>
     } @else {
       <div class="add-to-cart-button">
-        <button mat-icon-button (click)="addToCartHandler()">
-          <mat-icon>add_circle</mat-icon>
-        </button>
-        {{selectionCount}}
         <button mat-icon-button (click)="removeFromCart()">
           <mat-icon>do_not_disturb_on</mat-icon>
+        </button>
+        {{selectionCount}}
+        <button mat-icon-button (click)="addToCartHandler()">
+          <mat-icon>add_circle</mat-icon>
         </button>
       </div>
     }
