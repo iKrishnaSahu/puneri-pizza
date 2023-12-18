@@ -37,6 +37,20 @@ export const PIZZA_LIST = [
         "type": "fresh_pan",
         "price": 50
       }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
+      }
     ]
   },
   {
@@ -76,6 +90,20 @@ export const PIZZA_LIST = [
       {
         "type": "fresh_pan",
         "price": 50
+      }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
       }
     ]
   },
@@ -117,6 +145,20 @@ export const PIZZA_LIST = [
         "type": "fresh_pan",
         "price": 50
       }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
+      }
     ]
   },
   {
@@ -156,6 +198,20 @@ export const PIZZA_LIST = [
       {
         "type": "fresh_pan",
         "price": 50
+      }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
       }
     ]
   },
@@ -197,6 +253,20 @@ export const PIZZA_LIST = [
         "type": "fresh_pan",
         "price": 50
       }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
+      }
     ]
   },
   {
@@ -236,6 +306,20 @@ export const PIZZA_LIST = [
       {
         "type": "fresh_pan",
         "price": 50
+      }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
       }
     ]
   },
@@ -277,6 +361,20 @@ export const PIZZA_LIST = [
         "type": "fresh_pan",
         "price": 50
       }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
+      }
     ]
   },
   {
@@ -316,6 +414,20 @@ export const PIZZA_LIST = [
       {
         "type": "fresh_pan",
         "price": 50
+      }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
       }
     ]
   },
@@ -357,6 +469,20 @@ export const PIZZA_LIST = [
         "type": "fresh_pan",
         "price": 50
       }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
+      }
     ]
   },
   {
@@ -396,6 +522,20 @@ export const PIZZA_LIST = [
       {
         "type": "fresh_pan",
         "price": 50
+      }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
       }
     ]
   },
@@ -437,6 +577,20 @@ export const PIZZA_LIST = [
         "type": "fresh_pan",
         "price": 50
       }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
+      }
     ]
   },
   {
@@ -476,6 +630,20 @@ export const PIZZA_LIST = [
       {
         "type": "fresh_pan",
         "price": 50
+      }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
       }
     ]
   },
@@ -517,6 +685,20 @@ export const PIZZA_LIST = [
         "type": "fresh_pan",
         "price": 50
       }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
+      }
     ]
   },
   {
@@ -556,6 +738,20 @@ export const PIZZA_LIST = [
       {
         "type": "fresh_pan",
         "price": 50
+      }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
       }
     ]
   },
@@ -597,6 +793,20 @@ export const PIZZA_LIST = [
         "type": "fresh_pan",
         "price": 50
       }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
+      }
     ]
   },
   {
@@ -636,6 +846,20 @@ export const PIZZA_LIST = [
       {
         "type": "fresh_pan",
         "price": 50
+      }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
       }
     ]
   },
@@ -677,6 +901,63 @@ export const PIZZA_LIST = [
         "type": "fresh_pan",
         "price": 50
       }
+    ],
+    "cheese": [
+      {
+        "size": "regular",
+        "price": 50,
+      },
+      {
+        "size": "medium",
+        "price": 75,
+      },
+      {
+        "size": "large",
+        "price": 100,
+      }
     ]
   },
 ];
+
+export const TOPPINGS = [
+  {
+    "name": "Grilled Mushroom",
+    "price": 35,
+    "imageUrl": 'https://images.dominos.co.in/nextgen-catalog/media/prod/Dominos/toppings/1431da5b-dff8-4174-b386-49ee58cff1be_toppingsMushroom.jpg'
+  },
+  {
+    "name": "Onion",
+    "price": 30,
+    "imageUrl": "https://images.dominos.co.in/nextgen-catalog/media/prod/Dominos/toppings/bf5b71ec-aee5-4fbe-8a73-93c6cdcfd633_toppingsOnion.jpg"
+  },
+  {
+    "name": "Capsicum",
+    "price": 25,
+    "imageUrl": "https://images.dominos.co.in/nextgen-catalog/media/prod/Dominos/toppings/0002eacd-870a-4481-a824-d6642c6721bc_toppingsCapsicum.jpg"
+  },
+  {
+    "name": "Tomato",
+    "price": 25,
+    "imageUrl": "https://images.dominos.co.in/nextgen-catalog/media/prod/Dominos/toppings/d4df9d0d-c0aa-4665-bcab-ba1a0e9965c6_toppingsTomato.jpg"
+  },
+  {
+    "name": "Paneer",
+    "price": 40,
+    "imageUrl": "https://images.dominos.co.in/nextgen-catalog/media/prod/Dominos/toppings/9b136553-e9ba-4eb2-94e2-8934fa11a4aa_toppingsPaneer.jpg"
+  },
+  {
+    "name": "Red Paper",
+    "price": 25,
+    "imageUrl": "https://images.dominos.co.in/nextgen-catalog/media/prod/Dominos/toppings/65767407-9e3f-4b22-b114-0670bb29f106_toppingsPaparika.jpg"
+  },
+  {
+    "name": "Jalepeno",
+    "price": 30,
+    "imageUrl": "https://images.dominos.co.in/nextgen-catalog/media/prod/Dominos/toppings/99182937-30d2-41f5-a6ce-260adace8253_toppingsJalapeno.jpg"
+  },
+  {
+    "name": "Black Olive",
+    "price": 35,
+    "imageUrl": "https://images.dominos.co.in/nextgen-catalog/media/prod/Dominos/toppings/c3ece7f8-8589-4ee8-bf43-dfdcc98bfd8b_toppingsOlives.jpg"
+  },
+]

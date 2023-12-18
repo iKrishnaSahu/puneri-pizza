@@ -9,11 +9,14 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { NON_VEG_ICON, VEG_ICON } from '../../utils/constants';
+import { MatDialog } from '@angular/material/dialog';
+import { ToppingsComponent, ToppingsDialogData } from '../toppings/toppings.component';
+import { PizzaPriceTagComponent } from '../pizza-price-tag/pizza-price-tag.component';
 
 @Component({
   selector: 'puneri-pizza-pizza-item',
   standalone: true,
-  imports: [CommonModule, MatSelectModule, FormsModule, MatButtonModule, CrustNamePipe, MatIconModule],
+  imports: [CommonModule, MatSelectModule, FormsModule, MatButtonModule, CrustNamePipe, MatIconModule, PizzaPriceTagComponent],
   templateUrl: './pizza-item.component.html',
   styleUrl: './pizza-item.component.scss',
   encapsulation: ViewEncapsulation.None
@@ -26,6 +29,8 @@ export class PizzaItemComponent implements OnInit {
 
   nonVeg = NON_VEG_ICON;
   veg = VEG_ICON;
+
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.item.selectedSize = this.item.size[0];
@@ -43,9 +48,24 @@ export class PizzaItemComponent implements OnInit {
 
   customize() {
     // write logic to customize pizza here
+    const dialogRef = this.dialog.open(ToppingsComponent, {
+      data: {
+        pizza: structuredClone(this.item)
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result: ToppingsDialogData) => {
+      if (result) {
+        this.item = result.pizza;
+      }
+    });
   }
 
   removeFromCart() {
     this.removePizza.emit(this.item.id);
+  }
+
+  getToppingsTotal() {
+    return this.item.selectedToppings?.reduce((p, c) => p + c.price, 0) ?? 0;
   }
 }

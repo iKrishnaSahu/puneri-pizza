@@ -1,0 +1,60 @@
+.pizza-customization {
+  .pizza-details-container {
+    display: flex;
+    gap: 10px;
+
+    img {
+      width: 200px;
+    }
+
+    .pizza-details {
+      display: flex;
+    }
+  }
+
+  .cusomization-1 {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+.toppings {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  .topping {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .topping-name {
+      font-size: 12px;
+    }
+
+    .topping-price {
+      font-size: 12px;
+    }
+
+    .selection-tick {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+  }
+}
+
+// @media only screen and (min-device-width: 480px){
+//   .pizza-customization {
+//     .pizza-details-container {
+//       .pizza-details {
+//         display: flex;
+//         flex-direction: column;
+//       }
+//     }
+//   }
+// }

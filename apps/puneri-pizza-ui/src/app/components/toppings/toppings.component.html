@@ -1,0 +1,59 @@
+<div class="pizza-customization">
+  <h1 mat-dialog-title>Select your favourite toppings</h1>
+  <div mat-dialog-content>
+    @if(data.pizza) {
+    <div class="pizza-details-container">
+      <img [src]="data.pizza.imageUrl" [alt]="data.pizza.name">
+      <div>
+        <h3>{{data.pizza.name}}</h3>
+        <h4>{{data.pizza.description}}</h4>
+        <h4 class="price"><puneri-pizza-pizza-price-tag [pizza]="data.pizza"></puneri-pizza-pizza-price-tag></h4>
+      </div>
+    </div>
+
+    <div class="cusomization-1">
+      <mat-form-field>
+        <mat-label>Size</mat-label>
+        <mat-select [(ngModel)]="data.pizza.selectedSize" [panelWidth]="null">
+          @for (size of data.pizza.size; track size.type) {
+          <mat-option [value]="size">{{size.type | titlecase}} (+ ₹{{size.price}})</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Crust</mat-label>
+        <mat-select [(ngModel)]="data.pizza.selectedCrust" [panelWidth]="null">
+          @for (crust of data.pizza.crust; track crust.type) {
+          <mat-option [value]="crust">{{crust.type | titlecase | crustName }} (+ ₹{{crust.price}})</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-checkbox #extraCheeseCheckbox [checked]="data.pizza.selectedCheese"
+        (change)="extraCheeseChangeHandler($event)" [labelPosition]="'before'">Extra
+        Cheese (+{{getExtraCheesePrice()}})</mat-checkbox>
+    </div>
+    <div class="toppings">
+      @for(item of toppings; track item) {
+      <div class="topping">
+        <img [src]="item.imageUrl" [alt]="item.name">
+        @if(toppingAlreadyAdded(item)) {
+        <img class="selection-tick" src="https://pizzaonline.dominos.co.in/static/assets/icons/set-favorite-tick.svg">
+        }
+        <span class="topping-name">{{item.name}} (+ {{item.price}})</span>
+        @if(toppingAlreadyAdded(item)) {
+        <button mat-button (click)="removeTopping(item)">Remove</button>
+        } @else {
+        <button mat-button (click)="addTopping(item)">Add</button>
+        }
+      </div>
+      }
+    </div>
+    }
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="data" cdkFocusInitial color="primary">Proceed</button>
+  </div>
+</div>

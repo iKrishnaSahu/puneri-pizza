@@ -26,7 +26,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.isLoading = true;
     // adding timeout to show animation when loading
-    setTimeout(() => {
+    setTimeout(async() => {
+      await this.pizzaService.getToppings();
       this.pizzaService.getPizza()
         .then((pizzaList) => {
           this.pizzaList = pizzaList;

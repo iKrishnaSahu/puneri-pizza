@@ -1,14 +1,22 @@
 @if(item) {
-<div class="cart-item">
-  <div class="image">
-    <img [src]="item.imageUrl" />
-  </div>
-  <div class="title">
-    <h3>{{item.name}}</h3>
-    <h4 class="description">{{item.description}}</h4>
-  </div>
-  <div class="action">
-    <span>₹ {{item.basePrice + this.item.selectedSize.price + this.item.selectedCrust.price}}</span>
+<div class="cart-container">
+  <div class="cart-item">
+    <div class="image">
+      <img [src]="item.imageUrl" />
+    </div>
+    <div class="title">
+      <h3>{{item.name}} ({{(item.selectedSize.type | titlecase) + ' & ' +  (item.selectedCrust.type | titlecase | crustName)}})</h3>
+      <h4 class="description">{{item.description}}</h4>
+      @if(item.selectedCheese) {
+        <h4 class="extracheese">Extra cheese</h4>
+      }
+      @if(item.selectedToppings) {
+        <h4 class="toppings">Topping({{getToppings().join(', ')}})</h4>
+      }
+    </div>
+    <div class="action">
+      <span><puneri-pizza-pizza-price-tag [pizza]="item"></puneri-pizza-pizza-price-tag></span>
+    </div>
   </div>
 </div>
 }

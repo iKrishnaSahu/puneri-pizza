@@ -26,7 +26,9 @@ export class CartComponent implements OnDestroy {
         this.cartItems = cartPizza;
         this.total = 0;
         this.cartItems.forEach(cartPizza => {
-          this.total += cartPizza.basePrice + cartPizza.selectedCrust.price + cartPizza.selectedSize.price;
+          this.total += cartPizza.basePrice + cartPizza.selectedCrust.price + cartPizza.selectedSize.price
+            + (cartPizza.selectedCheese && cartPizza.selectedCheese.price ? cartPizza.selectedCheese.price : 0);
+            + cartPizza.selectedToppings?.reduce((p, c) => p + c.price, 0) ?? 0;
         });
       });
   }

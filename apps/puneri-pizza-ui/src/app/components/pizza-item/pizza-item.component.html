@@ -1,10 +1,10 @@
 @if(item) {
 <div class="pizza-item">
   <div class="pizza-image-container">
-    <span class="price">₹ {{item.basePrice + this.item.selectedSize.price + this.item.selectedCrust.price}}</span>
+    <span class="price"><puneri-pizza-pizza-price-tag [pizza]="item"></puneri-pizza-pizza-price-tag></span>
     <img class="veg-icon" [src]="item.veg ? veg : nonVeg" [alt]="item.name">
     <img class="pizza-image" [src]="item.imageUrl" [alt]="item.name">
-    <!-- <button class="customize-button" mat-raised-button (click)="customize()">Customise</button> -->
+    <button class="customize-button" mat-raised-button (click)="customize()">Customise</button>
   </div>
   <h3 class="pizza-title">{{item.name}}</h3>
   <p class="pizza-description">{{item.description}}</p>
@@ -12,9 +12,9 @@
   <div class="cusomization-1">
     <mat-form-field>
       <mat-label>Size</mat-label>
-      <mat-select [(ngModel)]="item.selectedSize">
+      <mat-select [(ngModel)]="item.selectedSize" [panelWidth]="null">
         @for (size of item.size; track size.type) {
-        <mat-option [value]="size">{{size.type | titlecase}}</mat-option>
+        <mat-option [value]="size">{{size.type | titlecase}} (+ ₹{{size.price}})</mat-option>
         }
       </mat-select>
     </mat-form-field>
@@ -22,7 +22,7 @@
       <mat-label>Crust</mat-label>
       <mat-select [(ngModel)]="item.selectedCrust" [panelWidth]="null">
         @for (crust of item.crust; track crust.type) {
-        <mat-option [value]="crust">{{crust.type | titlecase | crustName }}</mat-option>
+        <mat-option [value]="crust">{{crust.type | titlecase | crustName }} (+ ₹{{crust.price}})</mat-option>
         }
       </mat-select>
     </mat-form-field>
@@ -30,17 +30,17 @@
 
   <div class="actions">
     @if(selectionCount === 0) {
-      <button mat-button (click)="addToCartHandler()" class="add-to-cart-button">Add to Cart</button>
+    <button mat-button (click)="addToCartHandler()" class="add-to-cart-button">Add to Cart</button>
     } @else {
-      <div class="add-to-cart-button">
-        <button mat-icon-button (click)="removeFromCart()">
-          <mat-icon>do_not_disturb_on</mat-icon>
-        </button>
-        {{selectionCount}}
-        <button mat-icon-button (click)="addToCartHandler()">
-          <mat-icon>add_circle</mat-icon>
-        </button>
-      </div>
+    <div class="add-to-cart-button">
+      <button mat-icon-button (click)="removeFromCart()">
+        <mat-icon>do_not_disturb_on</mat-icon>
+      </button>
+      {{selectionCount}}
+      <button mat-icon-button (click)="addToCartHandler()">
+        <mat-icon>add_circle</mat-icon>
+      </button>
+    </div>
     }
   </div>
 </div>

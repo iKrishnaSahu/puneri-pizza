@@ -9,6 +9,10 @@ export interface Pizza {
   crust: Crust[];
   selectedSize: Size;
   selectedCrust: Crust;
+  cheese: Cheese[];
+  selectedCheese: Cheese;
+  toppings: Topping[]
+  selectedToppings: Topping[]
 }
 
 export interface Size {
@@ -23,4 +27,15 @@ export interface Crust {
 
 export interface CartPizza extends Pizza {
   type: string;
+}
+
+export interface Topping {
+  name: string;
+  price: number;
+  imageUrl: string;
+}
+
+export interface Cheese {
+  size: string;
+  price: number;
 }

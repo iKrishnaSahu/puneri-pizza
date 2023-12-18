@@ -1,0 +1,5 @@
+<span>
+  ₹ {{pizza.basePrice + pizza.selectedSize.price + pizza.selectedCrust.price
+  + (pizza.selectedCheese && pizza.selectedCheese.price ? pizza.selectedCheese.price : 0)
+  + getToppingsTotal()}}
+</span>
