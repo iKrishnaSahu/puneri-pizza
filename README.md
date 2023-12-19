@@ -2,8 +2,7 @@
 
 ## Start the app
 
-- Start UI - `npm run start:ui`
-- Start server - `npm run start:server`
+Run `npm start` to start both UI and server.
 
 ## Technical Documentation
 
@@ -18,7 +17,3 @@
 ## Server
 
 - Create GET API for getting all the pizza information
-- POST API for creating a new order
-
-
-
